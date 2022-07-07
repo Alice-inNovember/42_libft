@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/06 14:23:51 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/07 09:17:14 by junlee2          ###   ########seoul.kr  */
+/*   Created: 2022/07/07 08:51:48 by junlee2           #+#    #+#             */
+/*   Updated: 2022/07/07 09:17:28 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <stdlib.h>
+#include <errno.h>
 
-size_t	ft_strlen(const char *str)
+static void	ft_bzero(void *s, size_t len)
 {
-	size_t	returni;
+	size_t	i;
 
-	returni = 0;
-	while (str[returni])
-		returni++;
-	return (returni);
+	i = 0;
+	while (i < len)
+	{
+		((unsigned char *)s)[i] = (unsigned char)0;
+	}
 }
 
-char	*ft_strrchr(const char *s, int c)
+void	*ft_calloc(size_t count, size_t size)
 {
-	size_t	slen;
+	unsigned char	*returnptr;
 
-	slen = ft_strlen(s) - 1;
-	while (0 <= slen)
+	returnptr = (unsigned char *)malloc(count * size);
+	if (!returnptr)
 	{
-		if (s[slen] == c)
-			return ((char *)&s[slen]);
-		slen--;
+		errno = ENOMEM;
+		return (0);
 	}
-	return (0);
+	ft_bzero((void *)returnptr, count * size);
+	return ((void *)returnptr);
 }

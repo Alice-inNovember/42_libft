@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/06 14:23:51 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/07 09:17:14 by junlee2          ###   ########seoul.kr  */
+/*   Created: 2022/07/07 09:10:36 by junlee2           #+#    #+#             */
+/*   Updated: 2022/07/07 09:57:09 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <stdlib.h>
+#include <errno.h>
 
 size_t	ft_strlen(const char *str)
 {
@@ -22,16 +23,25 @@ size_t	ft_strlen(const char *str)
 	return (returni);
 }
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strdup(const char *s1)
 {
-	size_t	slen;
+	size_t	strl;
+	char	*returnptr;
+	int		i;
 
-	slen = ft_strlen(s) - 1;
-	while (0 <= slen)
+	strl = ft_strlen(s1);
+	returnptr = (char *)malloc(strl + 1);
+	if (!returnptr)
 	{
-		if (s[slen] == c)
-			return ((char *)&s[slen]);
-		slen--;
+		errno = ENOMEM;
+		return (0);
 	}
-	return (0);
+	i = 0;
+	while (s1[i])
+	{
+		returnptr[i] = s1[i];
+		i++;
+	}
+	returnptr[i] = 0;
+	return (returnptr);
 }

@@ -6,20 +6,20 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 14:00:09 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/06 17:17:51 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2022/07/07 09:57:31 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-static size_t	un_strl(char *str)
+static size_t	ft_strlen(const char *str)
 {
-	size_t	i;
+	size_t	returni;
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+	returni = 0;
+	while (str[returni])
+		returni++;
+	return (returni);
 }
 
 static void	uppendstr(char *dest, char *src, size_t destl, size_t size)
@@ -40,8 +40,8 @@ size_t	ft_strlcat(char *dest, char *src, size_t size)
 	size_t	destl;
 	size_t	srcl;
 
-	destl = un_strl(dest);
-	srcl = un_strl(src);
+	destl = ft_strlen(dest);
+	srcl = ft_strlen(src);
 	if (destl > size)
 		return (srcl + size);
 	uppendstr(dest, src, destl, size);
