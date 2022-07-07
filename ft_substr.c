@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/06 13:24:22 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/07 10:12:04 by junlee2          ###   ########seoul.kr  */
+/*   Created: 2022/07/07 10:18:21 by junlee2           #+#    #+#             */
+/*   Updated: 2022/07/07 10:40:13 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <stdlib.h>
+#include <errno.h>
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	srclen;
+	char	*returns;
 	size_t	i;
 
-	srclen = 0;
-	while (src[srclen])
-		srclen++;
-	if (dstsize == 0)
-		return (srclen);
-	i = 0;
-	while (src[i] && i < dstsize - 1)
+	returns = (char *)malloc(len + 1);
+	if (!returns)
 	{
-		dst[i] = src[i];
+		errno = ENOMEM;
+		return (0);
+	}
+	i = 0;
+	while (s[start + i] && i < len)
+	{
+		returns[i] = s[start + i];
 		i++;
 	}
-	dst[i] = 0;
-	return (srclen);
+	returns[i] = 0;
+	return (returns);
 }
