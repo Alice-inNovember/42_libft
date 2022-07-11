@@ -6,12 +6,11 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 13:38:27 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/07 16:59:12 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2022/07/11 13:07:59 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <errno.h>
 
 static size_t	ft_strlen(const char *str)
 {
@@ -43,10 +42,7 @@ static char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	returns = (char *)malloc(len + 1);
 	if (!returns)
-	{
-		errno = ENOMEM;
 		return (0);
-	}
 	i = 0;
 	while (s[start + i] && i < len)
 	{

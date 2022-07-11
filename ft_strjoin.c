@@ -6,12 +6,11 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 10:40:39 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/07 11:32:00 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2022/07/11 13:07:49 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <errno.h>
 
 static size_t	ft_strlen(const char *str)
 {
@@ -59,10 +58,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	totallen = ft_strlen(s1) + ft_strlen(s2);
 	returns = (char *)malloc(totallen + 1);
 	if (!returns)
-	{
-		errno = ENOMEM;
 		return (0);
-	}
 	ft_bzero(returns, totallen + 1);
 	strcat(returns, s1);
 	strcat(returns, s2);

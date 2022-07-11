@@ -6,12 +6,11 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 10:18:21 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/07 10:40:13 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2022/07/11 13:07:28 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <errno.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -20,10 +19,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	returns = (char *)malloc(len + 1);
 	if (!returns)
-	{
-		errno = ENOMEM;
 		return (0);
-	}
 	i = 0;
 	while (s[start + i] && i < len)
 	{

@@ -6,12 +6,11 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 09:10:36 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/07 09:57:09 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2022/07/11 13:07:50 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <errno.h>
 
 size_t	ft_strlen(const char *str)
 {
@@ -32,10 +31,7 @@ char	*ft_strdup(const char *s1)
 	strl = ft_strlen(s1);
 	returnptr = (char *)malloc(strl + 1);
 	if (!returnptr)
-	{
-		errno = ENOMEM;
 		return (0);
-	}
 	i = 0;
 	while (s1[i])
 	{
