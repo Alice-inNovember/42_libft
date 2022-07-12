@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 15:45:16 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/11 16:21:47 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2022/07/12 13:18:04 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void	ft_printer(int n, int fd)
 	if (n / 10 < 0)
 	{
 		write(fd, &temp, 1);
-		return;
+		return ;
 	}
 	ft_printer(n / 10, fd);
 	write(fd, &temp, 1);
@@ -28,9 +28,9 @@ static void	ft_printer(int n, int fd)
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	if (fd >= 0)
-		fd *= -1;
+	if (n >= 0)
+		n *= -1;
 	else
-		write(fd, '-', 1);
+		write(fd, "-", 1);
 	ft_printer(n, fd);
 }

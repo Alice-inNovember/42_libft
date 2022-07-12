@@ -6,13 +6,13 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 11:11:17 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/11 13:14:02 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2022/07/12 13:27:12 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-static int	ft_issame(int a, int b)
+static int	ft_issame(char a, char b)
 {
 	if (a == b)
 		return (1);
@@ -29,7 +29,7 @@ static char	**ft_freearr(char ***s_arr)
 		free((*s_arr)[i]);
 		i++;
 	}
-	free(s_arr);
+	free(*(s_arr));
 	return (0);
 }
 
@@ -63,13 +63,15 @@ char	**ft_split(char const*s, char c)
 {
 	int		strcount;
 	int		i;
+	char	*str;
 	char	**s_arr;
 
+	str = (char *)s;
 	strcount = 1;
 	i = 0;
 	while (s[i])
 	{
-		if (ft_issame(s[i], c))
+		if (ft_issame(str[i], c))
 			strcount++;
 		i++;
 	}
@@ -79,8 +81,8 @@ char	**ft_split(char const*s, char c)
 	i = 0;
 	while (i < strcount)
 	{
-		if (!ft_strmalloc(s_arr, s, c, i))
-			return (ft_freearr(*s_arr));
+		if (!ft_strmalloc(s_arr, str, c, i))
+			return (ft_freearr(&s_arr));
 		i++;
 	}
 	return (s_arr);

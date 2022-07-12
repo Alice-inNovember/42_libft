@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 10:40:39 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/11 13:07:49 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2022/07/12 13:29:00 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!returns)
 		return (0);
 	ft_bzero(returns, totallen + 1);
-	strcat(returns, s1);
-	strcat(returns, s2);
+	strcat(returns, (char *)s1);
+	strcat(returns, (char *)s2);
 	return (returns);
 }

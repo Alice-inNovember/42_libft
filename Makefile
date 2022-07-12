@@ -6,7 +6,7 @@
 #    By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/11 16:22:23 by junlee2           #+#    #+#              #
-#    Updated: 2022/07/12 12:49:36 by junlee2          ###   ########seoul.kr   #
+#    Updated: 2022/07/12 13:00:22 by junlee2          ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ SRCS	=	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 			ft_strdup.c ft_striteri.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c \
 			ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnstr.c ft_strrchr.c \
 			ft_strtrim.c ft_substr.c ft_tolower.c ft_touper.c
-OBJS	=	${SRCS:.c = .o}
+OBJS	=	${SRCS:.c=.o}
 
 all : $(NAME)
 
@@ -33,7 +33,7 @@ $(NAME) : $(OBJS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean :
-	$(RM) %.o
+	$(RM) $(OBJS)
 
 fclean : clean
 	$(RM) $(NAME)

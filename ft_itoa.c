@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 13:20:09 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/11 15:17:55 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2022/07/12 13:04:09 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,5 @@ char	*ft_itoa(int n)
 		size++;
 	}
 	returns = (char *)malloc(size + 1);
-	return (ft_toacal);
+	return (ft_toacal(returns, size, sign, n));
 }

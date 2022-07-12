@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 17:19:44 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/11 13:07:32 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2022/07/12 13:19:19 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,38 +19,28 @@ static int	ft_isspace(char in)
 	return (0);
 }
 
-static char	*ft_delspace(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] && ft_isspace(str[i]))
-		i++;
-	return (&str[i]);
-}
-
 int	ft_atoi(const char *str)
 {
-	char	*temp;
 	int		returni;
 	int		sign;
 	int		i;
 
-	temp = ft_delspace(temp);
 	returni = 0;
 	sign = 1;
 	i = 0;
-	if (temp[i] == '+')
+	while (ft_isspace(str[i]))
 		i++;
-	else if (temp[i] == '-')
+	if (str[i] == '+')
+		i++;
+	else if (str[i] == '-')
 	{
 		sign = -1;
 		i++;
 	}
-	while (temp[i] >= '0' && temp[i] <= '9')
+	while (str[i] >= '0' && str[i] <= '9')
 	{
 		returni *= 10;
-		returni += temp[i] - '0';
+		returni += str[i] - '0';
 		i++;
 	}
 	return (returni * sign);

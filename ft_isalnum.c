@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 10:23:41 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/11 13:07:35 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2022/07/12 13:03:17 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	ft_isalnum(int in)
 {
 	if (ft_isalpha(in))
 		return (ft_isalpha(in));
-	if (ft_isdigit)
+	if (ft_isdigit(in))
 		return (3);
 	else
 		return (0);

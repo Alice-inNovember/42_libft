@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 15:35:22 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/11 13:07:57 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2022/07/12 13:30:33 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,14 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t	i;
 
 	i = 0;
-	flen = strlen2(needle);
+	flen = ft_strlen(needle);
 	if (flen == 0)
-		return (haystack);
+		return ((char *)haystack);
 	while (haystack[i] && i + flen < len)
 	{
 		if (haystack[i] == needle[0])
-			if (flen == issame(haystack, needle, i))
-				return (&haystack[i]);
+			if (flen == issame((char *)haystack, (char *)needle, i))
+				return ((char *)&haystack[i]);
 		i++;
 	}
 	return (0);
