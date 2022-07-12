@@ -6,7 +6,7 @@
 #    By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/11 16:22:23 by junlee2           #+#    #+#              #
-#    Updated: 2022/07/12 12:49:10 by junlee2          ###   ########seoul.kr   #
+#    Updated: 2022/07/12 12:49:36 by junlee2          ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ $(NAME) : $(OBJS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean :
-	$(RM) $(OBJS)
+	$(RM) %.o
 
 fclean : clean
 	$(RM) $(NAME)
