@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 10:40:39 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/12 13:29:00 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2022/07/13 12:37:57 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ static void	ft_bzero(void *s, size_t len)
 	while (i < len)
 	{
 		((unsigned char *)s)[i] = (unsigned char)0;
+		i++;
 	}
 }
 

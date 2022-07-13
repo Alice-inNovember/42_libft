@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 13:38:27 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/11 13:07:59 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2022/07/13 12:39:34 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ static int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	{
 		if (s1[i] != s2[i])
 			return (s1[i] - s2[i]);
+		i++;
 	}
 	return (0);
 }

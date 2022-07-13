@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 13:20:09 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/12 13:04:09 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2022/07/13 12:13:39 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,14 @@ char	*ft_itoa(int n)
 
 	sign = -1;
 	size = 1;
-	if (n >= 0)
+	if (n > 0)
 	{
 		n *= -1;
 		sign = 1;
 		size = 0;
 	}
+	if (n == 0)
+		sign = 1;
 	temp = n;
 	while (temp < 0)
 	{

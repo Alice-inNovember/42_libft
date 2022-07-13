@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 11:11:17 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/12 13:27:12 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2022/07/13 12:37:09 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,71 +19,82 @@ static int	ft_issame(char a, char b)
 	return (0);
 }
 
-static char	**ft_freearr(char ***s_arr)
+static int	word_count(char *str, char c)
 {
+	int	count;
 	int	i;
 
+	count = 0;
 	i = 0;
-	while (!(*s_arr)[i])
-	{
-		free((*s_arr)[i]);
-		i++;
-	}
-	free(*(s_arr));
-	return (0);
-}
-
-static int	ft_strmalloc(char **s_arr, char *str, char c, int line)
-{
-	int		i;
-	int		len;
-
-	i = 0;
-	len = 0;
-	while (ft_issame(str[i], c) && str[i])
-		i++;
-	while (!ft_issame(str[i + len], c) && str[i + len])
-		len++;
-	s_arr[line] = (char *)malloc(len + 1);
-	if (!s_arr[line])
-		return (0);
-	len = 0;
-	while (!ft_issame(str[i + len], c) && str[i + len])
-	{
-		s_arr[line][len] = str[i + len];
-		len++;
-	}
-	s_arr[line][len] = 0;
-	s_arr[line + 1] = 0;
-	str = &str[i + len];
-	return (1);
-}
-
-char	**ft_split(char const*s, char c)
-{
-	int		strcount;
-	int		i;
-	char	*str;
-	char	**s_arr;
-
-	str = (char *)s;
-	strcount = 1;
-	i = 0;
-	while (s[i])
+	while (str[i])
 	{
 		if (ft_issame(str[i], c))
-			strcount++;
-		i++;
+			i++;
+		else
+		{
+			count++;
+			while (!ft_issame(str[i], c) && str[i])
+				i++;
+		}
 	}
-	s_arr = (char **)malloc(strcount);
-	if (!s_arr)
+	return (count);
+}
+
+static int	str_malloc(char **returnarr, char *str, char c, int count)
+{
+	int	i;
+	int	strsize;
+
+	strsize = 0;
+	while (!ft_issame(str[strsize], c) && str[strsize])
+		strsize++;
+	returnarr[count] = (char *)malloc(sizeof(char) * (strsize + 1));
+	if (!returnarr[count])
 		return (0);
 	i = 0;
-	while (i < strcount)
+	while (i < strsize)
 	{
-		if (!ft_strmalloc(s_arr, str, c, i))
-			return (ft_freearr(&s_arr));
+		returnarr[count][i] = str[i];
 		i++;
 	}
-	return (s_arr);
+	returnarr[count][i] = 0;
+	return (i);
+}
+
+static int	word_malloc(char **returnarr, char *str, char c)
+{
+	int	count;
+	int	temp;
+	int	i;
+
+	count = 0;
+	i = 0;
+	while (str[i])
+	{
+		if (ft_issame(str[i], c))
+			i++;
+		else
+		{
+			temp = str_malloc(returnarr, &str[i], c, count);
+			if (!temp)
+				return (0);
+			i += temp;
+			count++;
+		}
+	}
+	returnarr[count] = 0;
+	return (count);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**returnarr;
+	int		wcount;
+
+	wcount = word_count((char *)s, c);
+	returnarr = (char **)malloc(sizeof(char *) * (wcount + 1));
+	if (!returnarr)
+		return (returnarr);
+	word_malloc(returnarr, (char *)s, c);
+	return (returnarr);
 }
