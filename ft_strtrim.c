@@ -6,11 +6,12 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 13:38:27 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/13 12:39:34 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2022/07/13 15:50:41 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stddef.h>
 
 static size_t	ft_strlen(const char *str)
 {
@@ -22,21 +23,21 @@ static size_t	ft_strlen(const char *str)
 	return (returni);
 }
 
-static int	ft_strncmp(const char *s1, const char *s2, size_t n)
+static int	ft_isset(char a, const char *set)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	while ((s1[i] || s2[i]) && i < n)
+	while (set[i])
 	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
+		if (set[i] == a)
+			return (1);
 		i++;
 	}
 	return (0);
 }
 
-static char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*returns;
 	size_t	i;
@@ -57,19 +58,19 @@ static char	*ft_substr(char const *s, unsigned int start, size_t len)
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	int	s1len;
-	int	setlen;
-	int	s_index;
-	int	s_len;
+	int	f_trim;
+	int	l_trim;
 
 	s1len = ft_strlen(s1);
-	setlen = ft_strlen(set);
-	s_index = 0;
-	s_len = s1len;
-	if (setlen > s1len)
-		return (ft_substr(s1, 0, s1len));
-	if (ft_strncmp(s1, set, setlen) == 0)
-		s_index = setlen - 1;
-	if (ft_strncmp(&s1[s1len - setlen - 1], set, setlen))
-		s_len = s1len - setlen;
-	return (ft_substr(s1, s_index, s_len));
+	f_trim = 0;
+	l_trim = 0;
+	while (ft_isset(s1[f_trim], set))
+		f_trim++;
+	while (ft_isset(s1[s1len - 1 - l_trim], set))
+	{
+		if (!(s1len - f_trim - l_trim >= 0))
+			break ;
+		l_trim ++;
+	}
+	return (ft_substr(s1, f_trim, s1len - f_trim - l_trim));
 }

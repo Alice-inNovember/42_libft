@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 13:48:20 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/11 13:57:46 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2022/07/13 16:24:25 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		returns[i] = f(i, s[i]);
 		i++;
 	}
+	returns[i] = 0;
 	return (returns);
 }
