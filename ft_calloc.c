@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 08:51:48 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/12 14:30:32 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2022/07/19 11:16:37 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,11 @@ static void	ft_bzero(void *s, size_t len)
 void	*ft_calloc(size_t count, size_t size)
 {
 	unsigned char	*returnptr;
+	size_t			test;
 
+	test = count * size;
+	if (size != 0 && (test / size != count))
+		return (0);
 	returnptr = (unsigned char *)malloc(count * size);
 	if (!returnptr)
 		return (0);

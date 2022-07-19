@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 14:23:51 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/12 16:18:56 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2022/07/19 10:57:21 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)&s[i]);
 		i++;
 	}
-	if ((int)s[i] == c)
+	if (s[i] == (char)c)
 		return ((char *)&s[i]);
 	return (0);
 }
