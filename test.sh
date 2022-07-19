@@ -16,7 +16,7 @@ norminette ./*.c ./*.h
 # cd ..
 echo -e "\033[32;1m"WAR MACHINE"\033[m"
 read $a
-git clone https://github.com/ska42/libft-war-machine
+git clone https://github.com/y3ll0w42/libft-war-machine.git
 cd libft-war-machine/
 bash grademe.sh
 bash grademe.sh

@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 14:00:09 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/13 16:15:47 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2022/07/19 16:28:44 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ size_t	ft_strlcat(char *dest, char *src, size_t size)
 
 	destl = ft_strlen(dest);
 	srcl = ft_strlen(src);
-	if (destl > size)
+	if (destl >= size)
 		return (srcl + size);
 	uppendstr(dest, src, destl, size);
 	return (destl + srcl);

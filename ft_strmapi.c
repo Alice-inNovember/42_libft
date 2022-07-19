@@ -6,13 +6,13 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 13:48:20 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/13 16:24:25 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2022/07/19 15:11:43 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-size_t	ft_strlen(const char *str)
+static size_t	ft_strlen(const char *str)
 {
 	size_t	returni;
 

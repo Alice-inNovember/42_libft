@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 11:11:17 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/13 12:37:09 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2022/07/19 16:45:02 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,25 +19,18 @@ static int	ft_issame(char a, char b)
 	return (0);
 }
 
-static int	word_count(char *str, char c)
+static char	**ft_freearr(char **s_arr)
 {
-	int	count;
 	int	i;
 
-	count = 0;
 	i = 0;
-	while (str[i])
+	while (!s_arr[i])
 	{
-		if (ft_issame(str[i], c))
-			i++;
-		else
-		{
-			count++;
-			while (!ft_issame(str[i], c) && str[i])
-				i++;
-		}
+		free(s_arr[i]);
+		i++;
 	}
-	return (count);
+	free(s_arr);
+	return (0);
 }
 
 static int	str_malloc(char **returnarr, char *str, char c, int count)
@@ -50,7 +43,10 @@ static int	str_malloc(char **returnarr, char *str, char c, int count)
 		strsize++;
 	returnarr[count] = (char *)malloc(sizeof(char) * (strsize + 1));
 	if (!returnarr[count])
+	{
+		ft_freearr(returnarr);
 		return (0);
+	}
 	i = 0;
 	while (i < strsize)
 	{
@@ -90,8 +86,21 @@ char	**ft_split(char const *s, char c)
 {
 	char	**returnarr;
 	int		wcount;
+	int		i;
 
-	wcount = word_count((char *)s, c);
+	i = 0;
+	wcount = 0;
+	while (s[i])
+	{
+		if (ft_issame(s[i], c))
+			i++;
+		else
+		{
+			wcount++;
+			while (!ft_issame(s[i], c) && s[i])
+				i++;
+		}
+	}
 	returnarr = (char **)malloc(sizeof(char *) * (wcount + 1));
 	if (!returnarr)
 		return (returnarr);
