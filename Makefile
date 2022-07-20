@@ -6,7 +6,7 @@
 #    By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/11 16:22:23 by junlee2           #+#    #+#              #
-#    Updated: 2022/07/20 14:51:21 by junlee2          ###   ########seoul.kr   #
+#    Updated: 2022/07/20 15:03:27 by junlee2          ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ BOBJS	=	${BSRCS:.c=.o}
 
 all : $(NAME)
 
-bonus : $(NAME) $(BNAME)
+bonus : $(NAME) $(BNAME) $(BOBJS)
 	$(LIBC) $(NAME) $(BOBJS)
 
 $(NAME) : $(OBJS)
