@@ -6,16 +6,11 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 14:21:32 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/11 13:08:02 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2022/07/20 10:24:20 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	ft_isupper(int in)
-{
-	if (in < 'A' || in > 'Z')
-		return (0);
-	return (1);
-}
+#include "libft.h"
 
 int	ft_tolower(int in)
 {

@@ -6,33 +6,12 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 10:40:39 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/13 12:37:57 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2022/07/20 10:21:44 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-
-static size_t	ft_strlen(const char *str)
-{
-	size_t	returni;
-
-	returni = 0;
-	while (str[returni])
-		returni++;
-	return (returni);
-}
-
-static void	ft_bzero(void *s, size_t len)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < len)
-	{
-		((unsigned char *)s)[i] = (unsigned char)0;
-		i++;
-	}
-}
+#include "libft.h"
 
 static void	strcat(char *dest, char *srcs)
 {

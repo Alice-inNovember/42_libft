@@ -6,21 +6,11 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 14:23:51 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/19 15:12:02 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2022/07/20 10:23:08 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-static size_t	ft_strlen(const char *str)
-{
-	size_t	returni;
-
-	returni = 0;
-	while (str[returni])
-		returni++;
-	return (returni);
-}
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {

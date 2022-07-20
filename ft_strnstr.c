@@ -6,21 +6,11 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 15:35:22 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/19 11:04:04 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2022/07/20 10:22:44 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-static size_t	ft_strlen(const char *str)
-{
-	size_t	returni;
-
-	returni = 0;
-	while (str[returni])
-		returni++;
-	return (returni);
-}
+#include "libft.h"
 
 static size_t	issame(char *str, char *to_find, size_t stri)
 {

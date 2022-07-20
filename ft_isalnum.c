@@ -6,25 +6,25 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 10:23:41 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/12 13:03:17 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2022/07/20 10:24:34 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	ft_isupper(int in)
+int	ft_isupper(int in)
 {
 	if (in < 'A' || in > 'Z')
 		return (0);
 	return (1);
 }
 
-static int	ft_islower(int in)
+int	ft_islower(int in)
 {
 	if (in < 'a' || in > 'z')
 		return (0);
 	return (1);
 }
 
-static int	ft_isalpha(int in)
+int	ft_isalpha(int in)
 {
 	if (ft_isupper(in))
 		return (1);
@@ -34,7 +34,7 @@ static int	ft_isalpha(int in)
 		return (0);
 }
 
-static int	ft_isdigit(int in)
+int	ft_isdigit(int in)
 {
 	if (in < '0' || in > '9')
 		return (0);

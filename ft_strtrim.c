@@ -6,22 +6,12 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 13:38:27 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/19 15:12:28 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2022/07/20 10:23:34 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stddef.h>
-
-static size_t	ft_strlen(const char *str)
-{
-	size_t	returni;
-
-	returni = 0;
-	while (str[returni])
-		returni++;
-	return (returni);
-}
+#include "libft.h"
 
 static int	ft_isset(char a, const char *set)
 {

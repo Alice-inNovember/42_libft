@@ -6,21 +6,12 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 09:10:36 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/19 15:11:22 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2022/07/20 10:21:04 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-
-static size_t	ft_strlen(const char *str)
-{
-	size_t	returni;
-
-	returni = 0;
-	while (str[returni])
-		returni++;
-	return (returni);
-}
+#include "libft.h"
 
 char	*ft_strdup(const char *s1)
 {
