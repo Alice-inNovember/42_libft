@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 11:56:49 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/12 16:25:36 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2022/07/20 11:20:39 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 {
 	size_t	i;
 
+	if (!dst)
+		return (0);
 	if (dst <= src)
 	{
 		i = 0;

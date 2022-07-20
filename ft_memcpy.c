@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 11:47:05 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/12 14:38:40 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2022/07/20 11:01:22 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t	i;
-
+	if (dst == 0 && src == 0)
+		return (0);
 	i = 0;
 	while (i < n)
 	{
