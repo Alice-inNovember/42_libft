@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 13:32:22 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/12 14:25:10 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2022/07/20 10:43:17 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	ft_bzero(void *s, size_t len);
 void	*ft_calloc(size_t count, size_t size);
 int		ft_isalnum(int in);
 int		ft_isalpha(int in);
+int		ft_isupper(int in);
+int		ft_islower(int in);
 int		ft_isascii(int in);
 int		ft_isdigit(int in);
 int		ft_isprint(int in);

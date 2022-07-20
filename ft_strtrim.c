@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 13:38:27 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/20 10:23:34 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2022/07/20 10:32:37 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,24 +25,6 @@ static int	ft_isset(char a, const char *set)
 		i++;
 	}
 	return (0);
-}
-
-static char	*ft_substr(char const *s, unsigned int start, size_t len)
-{
-	char	*returns;
-	size_t	i;
-
-	returns = (char *)malloc(len + 1);
-	if (!returns)
-		return (0);
-	i = 0;
-	while (s[start + i] && i < len)
-	{
-		returns[i] = s[start + i];
-		i++;
-	}
-	returns[i] = 0;
-	return (returns);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)

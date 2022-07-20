@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/07 08:51:48 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/20 10:30:26 by junlee2          ###   ########seoul.kr  */
+/*   Created: 2022/07/20 10:36:45 by junlee2           #+#    #+#             */
+/*   Updated: 2022/07/20 10:36:55 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "libft.h"
-
-void	*ft_calloc(size_t count, size_t size)
+int	ft_isupper(int in)
 {
-	unsigned char	*returnptr;
-	size_t			test;
+	if (in < 'A' || in > 'Z')
+		return (0);
+	return (1);
+}
 
-	test = count * size;
-	if (size != 0 && (test / size != count))
+int	ft_islower(int in)
+{
+	if (in < 'a' || in > 'z')
 		return (0);
-	returnptr = (unsigned char *)malloc(count * size);
-	if (!returnptr)
+	return (1);
+}
+
+int	ft_isalpha(int in)
+{
+	if (ft_isupper(in))
+		return (1);
+	if (ft_islower(in))
+		return (2);
+	else
 		return (0);
-	ft_bzero((void *)returnptr, count * size);
-	return ((void *)returnptr);
 }
