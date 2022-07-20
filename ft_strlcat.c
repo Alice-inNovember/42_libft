@@ -6,21 +6,11 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 14:00:09 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/20 10:21:07 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2022/07/20 15:31:36 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-static size_t	ft_strlen(const char *str)
-{
-	size_t	returni;
-
-	returni = 0;
-	while (str[returni])
-		returni++;
-	return (returni);
-}
+#include "libft.h"
 
 static void	uppendstr(char *dest, char *src, size_t destl, size_t size)
 {
@@ -35,15 +25,15 @@ static void	uppendstr(char *dest, char *src, size_t destl, size_t size)
 	dest[destl + i] = 0;
 }
 
-size_t	ft_strlcat(char *dest, char *src, size_t size)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
 	size_t	destl;
 	size_t	srcl;
 
 	destl = ft_strlen(dest);
-	srcl = ft_strlen(src);
+	srcl = ft_strlen((char *)src);
 	if (destl >= size)
 		return (srcl + size);
-	uppendstr(dest, src, destl, size);
+	uppendstr(dest, (char *)src, destl, size);
 	return (destl + srcl);
 }
