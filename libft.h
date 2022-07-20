@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 13:32:22 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/20 13:50:54 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2022/07/20 13:54:06 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct	s_list
 
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
+int		ft_lstsize(t_list *lst);
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t len);

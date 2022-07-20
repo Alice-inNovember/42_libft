@@ -3,9 +3,11 @@ rm -rf Libftest/
 rm -rf libft-war-machine/
 rm -rf libft-unit-test/
 rm -rf libftTester/
-echo -e "\033[32;1m"NORM"\033[m"
-read $a
-norminette ./*.c ./*.h
+
+# echo -e "\033[32;1m"NORM"\033[m"
+# read $a
+# norminette ./*.c ./*.h
+
 # echo -e "\033[32;1m"LIBFT TEST"\033[m"
 # read $a
 # git clone https://github.com/jtoty/Libftest
@@ -15,13 +17,13 @@ norminette ./*.c ./*.h
 # ./grademe.sh
 # cd ..
 
-# echo -e "\033[32;1m"WAR MACHINE"\033[m"
-# read $a
-# git clone https://github.com/y3ll0w42/libft-war-machine.git
-# cd libft-war-machine/
-# bash grademe.sh
-# bash grademe.sh
-# cd ..
+echo -e "\033[32;1m"WAR MACHINE"\033[m"
+read $a
+git clone https://github.com/y3ll0w42/libft-war-machine.git
+cd libft-war-machine/
+bash grademe.sh
+bash grademe.sh
+cd ..
 
 echo -e "\033[32;1m"unit-test"\033[m"
 read $a

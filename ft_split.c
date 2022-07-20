@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 11:11:17 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/20 13:22:04 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2022/07/20 13:57:07 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,10 @@ static int	str_malloc(char **returnarr, char *str, char c, int count)
 		strsize++;
 	returnarr[count] = (char *)malloc(sizeof(char) * (strsize + 1));
 	if (!returnarr[count])
-		return (ft_freearr(returnarr));
+	{
+		ft_freearr(returnarr);
+		return (0);
+	}
 	i = 0;
 	while (i < strsize)
 	{

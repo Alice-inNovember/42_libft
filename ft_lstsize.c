@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 13:51:27 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/20 13:52:52 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2022/07/20 13:55:13 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ int	ft_lstsize(t_list *lst)
 
 	i = 0;
 	while (!lst[i].next)
-	{
-		/* code */
-	}
-	
+		i++;
+	return (i);
 }

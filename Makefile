@@ -6,14 +6,14 @@
 #    By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/11 16:22:23 by junlee2           #+#    #+#              #
-#    Updated: 2022/07/20 10:46:34 by junlee2          ###   ########seoul.kr   #
+#    Updated: 2022/07/20 14:51:21 by junlee2          ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	libft.a
 CC		=	gcc
 CFLAGS	=	-Wall -Wextra -Werror
-LIBC	=	ar rcs
+LIBC	=	ar rcus
 RM		=	rm -f
 SRCS	=	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 			ft_isdigit.c ft_isprint.c ft_itoa.c ft_memchr.c ft_memcmp.c ft_memcpy.c \
@@ -22,8 +22,15 @@ SRCS	=	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 			ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnstr.c \
 			ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c
 OBJS	=	${SRCS:.c=.o}
+BSRCS	=	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c 
+# ft_lstlast.c ft_lstadd_back.c \
+# 			ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+BOBJS	=	${BSRCS:.c=.o}
 
 all : $(NAME)
+
+bonus : $(NAME) $(BNAME)
+	$(LIBC) $(NAME) $(BOBJS)
 
 $(NAME) : $(OBJS)
 	$(LIBC) $(NAME) $(OBJS)
@@ -32,7 +39,7 @@ $(NAME) : $(OBJS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean :
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(BOBJS)
 
 fclean : clean
 	$(RM) $(NAME)

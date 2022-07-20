@@ -6,9 +6,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
- 
 
-# Make data base, printed on Wed Jul 20 13:03:25 2022
+# Make data base, printed on Wed Jul 20 14:51:30 2022
 
 # Variables
 
@@ -38,6 +37,8 @@ _ = /usr/bin/make
 CFLAGS = -Wall -Wextra -Werror
 # makefile (from `Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
+# makefile (from `Makefile', line 25)
+BSRCS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c 
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # makefile (from `Makefile', line 24)
@@ -66,6 +67,8 @@ SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.rPiZn5aPjT/Listeners
 VSCODE_PIPE_LOGGING = true
 # environment
 PWD = /Users/junlee2/Libft
+# makefile (from `Makefile', line 28)
+BOBJS = ${BSRCS:.c=.o}
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
@@ -145,7 +148,7 @@ PAGER = less
 # environment
 LC_ALL = C
 # makefile (from `Makefile', line 16)
-LIBC = ar rcs
+LIBC = ar rcus
 # environment
 SECURITYSESSIONID = 186a5
 # automatic
@@ -161,7 +164,7 @@ LANG = C
 # environment
 VSCODE_PID = 1025
 # variable set hash-table stats:
-# Load=74/1024=7%, Rehash=0, Collisions=3/106=3%
+# Load=76/1024=7%, Rehash=0, Collisions=6/110=5%
 
 # Pattern-specific Variable Values
 
@@ -169,14 +172,14 @@ VSCODE_PID = 1025
 
 # Directories
 
-# . (device 16777225, inode 619793): 41 files, no impossibilities.
+# . (device 16777225, inode 619793): 44 files, no impossibilities.
 
-# 41 files, no impossibilities in 1 directories.
+# 44 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
 %.o: %.c
-#  commands to execute (from `Makefile', line 32):
+#  commands to execute (from `Makefile', line 39):
 	$(CC) $(CFLAGS) -c $< -o $@
 	
 
@@ -289,7 +292,7 @@ ft_atoi.c:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-20 10:46:34
+#  Last modified 2022-07-20 14:51:21
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -301,6 +304,7 @@ ft_isprint.o:
 #  Modification time never checked.
 #  File has not been updated.
 
+ 
 libft.a: ft_atoi.o ft_bzero.o ft_calloc.o ft_isalnum.o ft_isalpha.o ft_isascii.o ft_isdigit.o ft_isprint.o ft_itoa.o ft_memchr.o ft_memcmp.o ft_memcpy.o ft_memmove.o ft_memset.o ft_putchar_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_putstr_fd.o ft_split.o ft_strchr.o ft_strdup.o ft_striteri.o ft_strjoin.o ft_strlcat.o ft_strlcpy.o ft_strlen.o ft_strmapi.o ft_strncmp.o ft_strnstr.o ft_strrchr.o ft_strtrim.o ft_substr.o ft_tolower.o ft_toupper.o
 #  Implicit rule search has not been done.
 #  File does not exist.
@@ -308,7 +312,7 @@ libft.a: ft_atoi.o ft_bzero.o ft_calloc.o ft_isalnum.o ft_isalpha.o ft_isascii.o
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/4=0%
-#  commands to execute (from `Makefile', line 29):
+#  commands to execute (from `Makefile', line 36):
 	$(LIBC) $(NAME) $(OBJS)
 	
 
@@ -316,7 +320,6 @@ libft.a: ft_atoi.o ft_bzero.o ft_calloc.o ft_isalnum.o ft_isalpha.o ft_isascii.o
 ft_striteri.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
- 
 #  File has not been updated.
 
 # Not a target:
@@ -324,6 +327,14 @@ ft_bzero.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+
+bonus: libft.a
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 33):
+	$(LIBC) $(NAME) $(BOBJS)
+	
 
 # Not a target:
 ft_putnbr_fd.o:
@@ -336,7 +347,7 @@ fclean: clean
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 38):
+#  commands to execute (from `Makefile', line 45):
 	$(RM) $(NAME)
 	
 
@@ -387,8 +398,8 @@ clean:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 35):
-	$(RM) $(OBJS)
+#  commands to execute (from `Makefile', line 42):
+	$(RM) $(OBJS) $(BOBJS)
 	
 
 # Not a target:
@@ -475,7 +486,7 @@ ft_atoi.o: ft_atoi.c
 # ? := ft_atoi.c
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/14=7%
-#  commands to execute (from `Makefile', line 32):
+#  commands to execute (from `Makefile', line 39):
 	$(CC) $(CFLAGS) -c $< -o $@
 	
 
@@ -492,7 +503,7 @@ ft_putendl_fd.o:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=44/1024=4%, Rehash=0, Collisions=6/102=6%
+# Load=45/1024=4%, Rehash=0, Collisions=6/104=6%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -504,6 +515,6 @@ ft_putendl_fd.o:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Wed Jul 20 13:03:25 2022
+# Finished Make data base on Wed Jul 20 14:51:30 2022
 
  
