@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 13:20:09 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/13 12:13:39 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2022/07/20 12:01:48 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ static char	*ft_toacal(char *returns, int size, int sign, int n)
 {
 	int	i;
 
+	if (!returns)
+		return (0);
 	i = 1;
 	while (i <= size)
 	{

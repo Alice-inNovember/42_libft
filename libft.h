@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 13:32:22 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/20 10:43:17 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2022/07/20 13:36:35 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,14 @@
 # define LIBFT_H
 
 # include <stddef.h>
+
+typedef struct	s_list
+{
+	void			*content;
+	struct s_list	*next;
+} t_list;
+
+t_list	*ft_lstnew(void *content);
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t len);
