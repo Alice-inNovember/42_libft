@@ -8,10 +8,11 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Wed Jul 20 16:02:42 2022
+# Make data base, printed on Thu Jul 21 12:51:53 2022
 
 # Variables
 
+ 
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
@@ -25,14 +26,13 @@ VSCODE_LOG_NATIVE = false
 # automatic
 @F = $(notdir $@)
 # makefile
- 
 CURDIR := /Users/junlee2/Libft
 # makefile
 SHELL = /bin/sh
 # makefile (from `Makefile', line 17)
 RM = rm -f
 # environment
-VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"ko","availableLanguages":{},"_languagePackSupport":true}
 # environment
 _ = /usr/bin/make
 # makefile (from `Makefile', line 15)
@@ -40,13 +40,13 @@ CFLAGS = -Wall -Wextra -Werror
 # makefile (from `Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
 # makefile (from `Makefile', line 25)
-BSRCS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c 
+BSRCS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c 
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # makefile (from `Makefile', line 24)
 OBJS = ${SRCS:.c=.o}
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000csb40036_s/T/vscode-ipc-3ec538a5-c43a-478b-acf1-fad0f11fde6c.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000csb40036_s/T/vscode-ipc-cd385796-d303-4c60-8305-de7986ad1710.sock
 # environment
 VSCODE_CWD = /
 # environment
@@ -54,7 +54,7 @@ PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-LaunchInstanceID = 46C39047-CEF6-40AE-812B-7C45DC7E27CA
+LaunchInstanceID = 29F77E39-2C57-4FDC-B329-8E2302E3F707
 # environment
 VSCODE_LOG_STACK = false
 # environment
@@ -62,7 +62,7 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.rPiZn5aPjT/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.eZc3ZPCbwB/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -152,7 +152,7 @@ LC_ALL = C
 # makefile (from `Makefile', line 16)
 LIBC = ar rcus
 # environment
-SECURITYSESSIONID = 186a5
+SECURITYSESSIONID = 186a4
 # automatic
 ^F = $(notdir $^)
 # default
@@ -164,9 +164,8 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 1025
+VSCODE_PID = 2042
 # variable set hash-table stats:
- 
 # Load=76/1024=7%, Rehash=0, Collisions=8/112=7%
 
 # Pattern-specific Variable Values
@@ -175,9 +174,9 @@ VSCODE_PID = 1025
 
 # Directories
 
-# . (device 16777225, inode 619793): 45 files, no impossibilities.
+# . (device 16777225, inode 619793): 48 files, no impossibilities.
 
-# 45 files, no impossibilities in 1 directories.
+# 48 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -278,6 +277,12 @@ ft_split.o:
 #  File has not been updated.
 
 # Not a target:
+ft_lstclear.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 ft_strlcat.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -301,7 +306,7 @@ ft_atoi.c:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-20 15:40:20
+#  Last modified 2022-07-21 11:40:44
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -313,6 +318,7 @@ ft_isprint.o:
 #  Modification time never checked.
 #  File has not been updated.
 
+ 
 libft.a: ft_atoi.o ft_bzero.o ft_calloc.o ft_isalnum.o ft_isalpha.o ft_isascii.o ft_isdigit.o ft_isprint.o ft_itoa.o ft_memchr.o ft_memcmp.o ft_memcpy.o ft_memmove.o ft_memset.o ft_putchar_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_putstr_fd.o ft_split.o ft_strchr.o ft_strdup.o ft_striteri.o ft_strjoin.o ft_strlcat.o ft_strlcpy.o ft_strlen.o ft_strmapi.o ft_strncmp.o ft_strnstr.o ft_strrchr.o ft_strtrim.o ft_substr.o ft_tolower.o ft_toupper.o
 #  Implicit rule search has not been done.
 #  File does not exist.
@@ -342,7 +348,7 @@ ft_lstnew.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-bonus: libft.a ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o ft_lstadd_back.o
+bonus: libft.a ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o ft_lstadd_back.o ft_lstdelone.o ft_lstclear.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -447,6 +453,12 @@ ft_strdup.o:
 #  File has not been updated.
 
 # Not a target:
+ft_lstdelone.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 ft_memmove.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -491,7 +503,6 @@ ft_putchar_fd.o:
 ft_atoi.o: ft_atoi.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `ft_atoi'
- 
 #  File does not exist.
 #  File has been updated.
 #  Needs to be updated (-q is set).
@@ -536,7 +547,7 @@ ft_putendl_fd.o:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=50/1024=5%, Rehash=0, Collisions=7/114=6%
+# Load=52/1024=5%, Rehash=0, Collisions=7/118=6%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -548,6 +559,6 @@ ft_putendl_fd.o:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Wed Jul 20 16:02:42 2022
+# Finished Make data base on Thu Jul 21 12:51:53 2022
 
  
