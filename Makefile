@@ -6,7 +6,7 @@
 #    By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/11 16:22:23 by junlee2           #+#    #+#              #
-#    Updated: 2022/07/21 11:40:44 by junlee2          ###   ########seoul.kr   #
+#    Updated: 2022/07/21 15:54:12 by junlee2          ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SRCS	=	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 			ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c
 OBJS	=	${SRCS:.c=.o}
 BSRCS	=	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
-			ft_lstdelone.c ft_lstclear.c #ft_lstiter.c ft_lstmap.c
+			ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 BOBJS	=	${BSRCS:.c=.o}
 
 all : $(NAME)
