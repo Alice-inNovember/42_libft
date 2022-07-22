@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 13:38:27 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/20 10:32:37 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2022/07/22 14:22:04 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,5 @@ char	*ft_strtrim(char const *s1, char const *set)
 		if (!(s1len - f_trim - l_trim >= 0))
 			break ;
 		l_trim ++;
-	}
-	return (ft_substr(s1, f_trim, s1len - f_trim - l_trim));
+	}	return (ft_substr(s1, f_trim, s1len - f_trim - l_trim));
 }
