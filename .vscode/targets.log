@@ -8,14 +8,14 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Fri Jul 22 17:48:06 2022
+# Make data base, printed on Mon Jul 25 09:01:19 2022
 
 # Variables
 
- 
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
+ 
 ?F = $(notdir $?)
 # environment
 VSCODE_LOG_NATIVE = false
@@ -46,7 +46,7 @@ VSCODE_VERBOSE_LOGGING = true
 # makefile (from `Makefile', line 24)
 OBJS = ${SRCS:.c=.o}
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000csb40036_s/T/vscode-ipc-bb266377-de4d-41af-a247-e5eb6fb35f41.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000csb40036_s/T/vscode-ipc-c935f3b8-f2d5-477c-b4fc-42adced6a276.sock
 # environment
 VSCODE_CWD = /
 # environment
@@ -54,7 +54,7 @@ PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-LaunchInstanceID = F8210318-D69F-4409-8D06-79B29EBE00AB
+LaunchInstanceID = 8915A59D-0C11-43B3-9696-10AE8F276EEC
 # environment
 VSCODE_LOG_STACK = false
 # environment
@@ -62,7 +62,7 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.th5NFqrVSP/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.CNQxl6zmoC/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -132,7 +132,7 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000003.Electron
+XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x1000001a.Electron
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
@@ -152,7 +152,7 @@ LC_ALL = C
 # makefile (from `Makefile', line 16)
 LIBC = ar rcus
 # environment
-SECURITYSESSIONID = 186a6
+SECURITYSESSIONID = 1873d
 # automatic
 ^F = $(notdir $^)
 # default
@@ -164,7 +164,7 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 1690
+VSCODE_PID = 33446
 # variable set hash-table stats:
 # Load=76/1024=7%, Rehash=0, Collisions=5/110=5%
 
@@ -313,11 +313,11 @@ libft.a: ft_atoi.o ft_bzero.o ft_calloc.o ft_isalnum.o ft_isalpha.o ft_isascii.o
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/4=0%
- 
 #  commands to execute (from `Makefile', line 36):
 	$(LIBC) $(NAME) $(OBJS)
 	
 
+ 
 # Not a target:
 ft_striteri.o:
 #  Implicit rule search has not been done.
@@ -514,6 +514,6 @@ ft_putendl_fd.o:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Fri Jul 22 17:48:06 2022
+# Finished Make data base on Mon Jul 25 09:01:19 2022
 
  

@@ -7,9 +7,9 @@ gcc -Wall -Wextra -Werror -c ft_calloc.c -o ft_calloc.o
 gcc -Wall -Wextra -Werror -c ft_isalnum.c -o ft_isalnum.o
 gcc -Wall -Wextra -Werror -c ft_isalpha.c -o ft_isalpha.o
 gcc -Wall -Wextra -Werror -c ft_isascii.c -o ft_isascii.o
+ 
 gcc -Wall -Wextra -Werror -c ft_isdigit.c -o ft_isdigit.o
 gcc -Wall -Wextra -Werror -c ft_isprint.c -o ft_isprint.o
- 
 gcc -Wall -Wextra -Werror -c ft_itoa.c -o ft_itoa.o
 gcc -Wall -Wextra -Werror -c ft_memchr.c -o ft_memchr.o
 gcc -Wall -Wextra -Werror -c ft_memcmp.c -o ft_memcmp.o
