@@ -6,14 +6,14 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 10:40:39 by junlee2           #+#    #+#             */
-/*   Updated: 2022/07/20 10:21:44 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2022/07/27 08:56:09 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-static void	strcat(char *dest, char *srcs)
+static void	ft_strcat(char *dest, char *srcs)
 {
 	int	i;
 
@@ -40,7 +40,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!returns)
 		return (0);
 	ft_bzero(returns, totallen + 1);
-	strcat(returns, (char *)s1);
-	strcat(returns, (char *)s2);
+	ft_strcat(returns, (char *)s1);
+	ft_strcat(returns, (char *)s2);
 	return (returns);
 }
